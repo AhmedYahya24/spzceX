@@ -26,9 +26,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const { limit } = useSelector((state) => state.limit);
   const { offset } = useSelector((state) => state.offset);
-  const { view } = useSelector((state) => state.modal);
-  const { id } = useSelector((state) => state.id);
   const [recordInfo, setRecordInfo] = useState(null);
+  const [sendReq, setSendReq] = useState(false);
 
   //functions
 
@@ -51,7 +50,7 @@ const Home = () => {
     // recordInfo && console.log(recordInfo);
     dispatch(setIDAction(record.launch_date));
     dispatch(setModalTrue());
-    // console.log(id);
+    setSendReq(true);
   };
 
   const handleSelect = (e) => {
@@ -109,8 +108,8 @@ const Home = () => {
           <Button type="primary" onClick={handleNext}>
             Next
           </Button>
-
-          <ModalC />
+          {sendReq ? <ModalC prop={sendReq} /> : null}
+          <br></br>
         </div>
       </div>
     );

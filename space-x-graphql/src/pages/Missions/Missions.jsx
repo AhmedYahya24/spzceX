@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Card } from "antd";
 import { TwitterCircleFilled } from "@ant-design/icons";
-import { useMissionQuery } from "../../utils/hooks/useMissionQuery/useMissionQuery";
-import { useCustomersPayloads } from "../../utils/hooks/useCustomersPayloads/useCustomersPayloads";
+import { useMissionQuery } from "../../utils/hooks/useMissionQuery";
+import { useCustomersPayloads } from "../../utils/hooks/useCustomersPayloads";
 import "./Missions.css";
 import MissionModal from "../../components/MissionModal/MissionModal";
 
