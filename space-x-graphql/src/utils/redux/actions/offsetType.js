@@ -1,0 +1,2 @@
+export const NEXTOFFSET = "NEXTOFFSET";
+export const PREVIOUSOFFSET = "PREVIOUSOFFSET";
