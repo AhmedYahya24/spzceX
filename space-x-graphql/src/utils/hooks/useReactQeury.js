@@ -52,6 +52,5 @@ export const useReactQeury = () => {
     fetchDataLunches(offset, limit)
   );
   if (data) data = data.launchesPastResult.data;
-  // data && console.log(data);
   return { data, isLoading, error, refetch };
 };

@@ -1,4 +1,4 @@
-import { Button, Modal, Table } from "antd";
+import { Button, Table } from "antd";
 import React, { useEffect, useState } from "react";
 import { columns } from "../../components/table/Table";
 import { setInDataSource } from "../../utils/functions/setInDataSource";
@@ -47,7 +47,6 @@ const Lanches = () => {
   //handle Show Modal
   const showModal = (record) => {
     setRecordInfo(record);
-    // recordInfo && console.log(recordInfo);
     dispatch(setIDAction(record.launch_date));
     dispatch(setModalTrue());
     setSendReq(true);
