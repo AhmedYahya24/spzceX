@@ -1,7 +1,8 @@
 import "./App.css";
-import Home from "./pages/home";
+import Lanches from "./pages/lanches";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Missions from "./pages/Missions/Missions";
+import Home from "./pages/home/Home";
 
 const App = () => {
   // const d = useQueryModal();
@@ -11,7 +12,8 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/lunches" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/lunches" element={<Lanches />} />
           <Route path="/missions" element={<Missions />} />
         </Routes>
       </BrowserRouter>
