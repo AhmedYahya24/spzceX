@@ -1,10 +1,10 @@
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setModalFalse } from "../../utils/redux/actions/modalAction";
 import { useQueryModal } from "../../utils/hooks/useQueryModal";
 
-const ModalC = ({ sendReq }) => {
+const ModalC = () => {
   //constance's
   const { view } = useSelector((state) => state.modal);
   const { id } = useSelector((state) => state.id);
