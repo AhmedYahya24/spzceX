@@ -1,10 +1,8 @@
 import { useQuery } from "react-query";
 import request, { gql } from "graphql-request";
 import { useSelector } from "react-redux";
-
+import { endpoint } from "./useQueryModal";
 const fetchDataLunches = async (offset, limit) => {
-  const endpoint = "https://api.spacex.land/graphql/";
-
   return await request(
     endpoint,
     gql`

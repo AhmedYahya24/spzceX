@@ -1,25 +1,21 @@
 import { Button, Table } from "antd";
 import React, { useEffect, useState } from "react";
-import { columns } from "../../components/table/Table";
+import { columns } from "../../components/Table/Table";
 import { setInDataSource } from "../../utils/functions/setInDataSource";
 import { useReactQeury } from "../../utils/hooks/useReactQeury";
-import {
-  incrementByFifteenAction,
-  incrementByFiveAction,
-  incrementByTenAction,
-} from "../../utils/redux/actions/limitAction";
+import { incrementByValueAction } from "../../utils/redux/actions/limitAction";
 import { useDispatch, useSelector } from "react-redux";
 import {
   nextOffsetAction,
   previousOffsetAction,
 } from "../../utils/redux/actions/offsetAvtion";
-import ModalC from "../../components/modal/ModalC";
+import ModalComponent from "../../components/Modal/ModalComponent";
 import { setModalTrue } from "../../utils/redux/actions/modalAction";
 import { setIDAction } from "../../utils/redux/actions/IDAction";
 //styles
-import "./lanches.css";
+import "./launches.css";
 
-const Lanches = () => {
+const Launches = () => {
   //constanta's
   const { data, isLoading, error, refetch } = useReactQeury();
   const dataSource = []; // if it out of the functional component it will present the data twice
@@ -53,22 +49,7 @@ const Lanches = () => {
   };
 
   const handleSelect = (e) => {
-    switch (parseInt(e.target.value)) {
-      case 5:
-        dispatch(incrementByFiveAction());
-        break;
-
-      case 10:
-        dispatch(incrementByTenAction());
-        break;
-
-      case 15:
-        dispatch(incrementByFifteenAction());
-        break;
-
-      default:
-        return;
-    }
+    dispatch(incrementByValueAction(parseInt(e.target.value)));
   };
 
   if (isLoading) {
@@ -107,7 +88,7 @@ const Lanches = () => {
           <Button type="primary" onClick={handleNext}>
             Next
           </Button>
-          {sendReq ? <ModalC prop={sendReq} /> : null}
+          {sendReq ? <ModalComponent prop={sendReq} /> : null}
           <br></br>
         </div>
       </div>
@@ -115,4 +96,4 @@ const Lanches = () => {
   }
 };
 
-export default Lanches;
+export default Launches;

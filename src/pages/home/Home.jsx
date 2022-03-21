@@ -12,7 +12,7 @@ const Home = () => {
         <ul>
           <li>
             {" "}
-            <Link to="/lunches">Lunches </Link>
+            <Link to="/launches">Lunches </Link>
           </li>
           <li>
             {" "}

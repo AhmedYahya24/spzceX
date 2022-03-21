@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setModalFalse } from "../../utils/redux/actions/modalAction";
 import { useQueryModal } from "../../utils/hooks/useQueryModal";
 
-const ModalC = () => {
+const ModalComponent = () => {
   //constance's
   const { view } = useSelector((state) => state.modal);
   const { id } = useSelector((state) => state.id);
@@ -64,4 +64,4 @@ const ModalC = () => {
   }
 };
 
-export default ModalC;
+export default ModalComponent;
