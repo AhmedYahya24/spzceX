@@ -1,7 +1,8 @@
-export const setInDataSource = (data, dataSource) => {
+export const setInDataSource = (data) => {
+  const pushedData = [];
   data &&
     data.map((d) => {
-      dataSource.push({
+      pushedData.push({
         key: Math.random(),
         id: d.id,
         Mission_icon: (
@@ -25,4 +26,7 @@ export const setInDataSource = (data, dataSource) => {
         ),
       });
     });
+  if (data) {
+    return pushedData;
+  }
 };

@@ -18,7 +18,6 @@ import "./launches.css";
 const Launches = () => {
   //constanta's
   const { data, isLoading, error, refetch } = useReactQeury();
-  const dataSource = []; // if it out of the functional component it will present the data twice
   const dispatch = useDispatch();
   const { limit } = useSelector((state) => state.limit);
   const { offset } = useSelector((state) => state.offset);
@@ -30,8 +29,6 @@ const Launches = () => {
   useEffect(() => {
     refetch();
   }, [offset, limit]);
-
-  setInDataSource(data, dataSource);
 
   const handleNext = (_) => {
     dispatch(nextOffsetAction(limit));
@@ -62,7 +59,7 @@ const Launches = () => {
     return (
       <div>
         <Table
-          dataSource={dataSource}
+          dataSource={setInDataSource(data)}
           columns={columns}
           onRow={(record, rowIndex) => {
             return {
