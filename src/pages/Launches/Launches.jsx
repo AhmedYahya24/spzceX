@@ -47,6 +47,7 @@ const Launches = () => {
 
   const handleSelect = (e) => {
     dispatch(incrementByValueAction(parseInt(e.target.value)));
+    // or dispatch(incrementByValueAction(+e.target.value)) if you want to use + sign as well
   };
 
   if (isLoading) {
